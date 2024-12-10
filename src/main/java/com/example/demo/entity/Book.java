@@ -18,6 +18,7 @@ public class Book {
     private Long id;
 
     private String title;
+    private String isbn;
 
     @ManyToOne
     @JoinColumn(name = "library_id")
@@ -31,8 +32,13 @@ public class Book {
     )
     private List<Author> authors;
 
-    public void setLibrary(Library library) {
-        this.library = library;
-    }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
+                '}';
+    }
 }

@@ -17,14 +17,19 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String email;
     private String name;
 
+    @Getter
     @ManyToMany(mappedBy = "authors")
     private List<Book> books;
 
-    public List<Book> getBooks() {
-        return books;
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
-
 }

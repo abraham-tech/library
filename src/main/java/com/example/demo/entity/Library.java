@@ -25,5 +25,12 @@ public class Library {
     @OneToOne(mappedBy = "library", cascade = CascadeType.ALL)
     private Librarian librarian;
 
-    // Getters and Setters
+    @Override
+    public String toString() {
+        return "Library{" +
+                "id=" + id +
+                ", name='" + name +
+                '}';
+    }
+
 }

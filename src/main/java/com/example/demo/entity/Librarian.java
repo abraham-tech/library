@@ -14,15 +14,20 @@ public class Librarian {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
+    private String email;
 
-    public void setLibrary(Library library) {
-        this.library = library;
-    }
 
     @OneToOne
     @JoinColumn(name="library_id", unique = true)
     private Library library;
 
+    @Override
+    public String toString() {
+        return "Librarian{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
